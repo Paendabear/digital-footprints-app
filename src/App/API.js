@@ -1,0 +1,29 @@
+import { Component } from 'react'
+
+export default class API extends Component{
+
+    static apiGet() { 
+        
+    const apiURL = 'https://whispering-tundra-15220.herokuapp.com/stats';
+
+    // const queryString = this.formatQueryParams(data);
+
+    const url = apiURL;
+
+
+
+    const options = {
+      method: 'GET',
+      headers: {
+        
+        "Content-Type": "application/json"
+      }
+    };
+
+    return fetch(url, options)
+    }
+
+    
+
+}
+
