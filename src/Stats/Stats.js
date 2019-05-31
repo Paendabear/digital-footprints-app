@@ -3,10 +3,12 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ErrorBoundary from '../ErrorBoundaries/ErrorBoundary'
 import API from '../App/API';
-
+import GoogleApiWrapper from '../maps/Map';
 
 export default class Stats extends Component {
-
+    constructor(){
+        super();
+    }
     
 
     getStats = () => {
@@ -36,6 +38,7 @@ export default class Stats extends Component {
     componentDidMount() {
         // API.apiPost({name:'test2', type:'folders'});
         this.getStats();
+        console.log(this.props.where)
       }
 
 
@@ -48,6 +51,8 @@ export default class Stats extends Component {
                 {console.log(Stats.data)}
                 {JSON.stringify(Stats)}
             </div>
+            {console.log(this.props.where)}
+            <GoogleApiWrapper where={this.props.where}/>
         </section>
     )
     }
