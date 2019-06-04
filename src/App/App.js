@@ -19,11 +19,43 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
+      timeStart: null,
       ready:true,
       buttons:{
-
+        pressed: {},
+        hoverStats: {
+          colors:{
+            blue:{
+                amount:0,
+                time:0
+              },
+              red:{
+                amount:0,
+                time:0
+              },
+              yellow:{
+                amount:0,
+                time:0
+              }
+          },
+          positions:{
+              '1':{
+                amount:0,
+                time:0
+              },
+              '2':{
+                amount:0,
+                time:0
+              },
+              '3':{
+                amount:0,
+                time:0
+              }
+          }
+      },
       },
       session:{
+        id:null,
         where: {lat:null,lng:null},
         mobile: null,
         log:{
@@ -40,6 +72,8 @@ class App extends Component {
     };
 
   componentDidMount() {
+
+    console.log(this.state)
     
     let geoOptions = {
       enableHighAccuracy: true,
@@ -63,6 +97,7 @@ class App extends Component {
     //console.log(position)
     let timestamp = position.timestamp;
     this.setState({
+      timeStart:timestamp,
       ready:true,
       session: {
         where:{
@@ -92,13 +127,46 @@ class App extends Component {
     });
   }
 
-  onButtonHover = (e) => {
-    console.log(e.target)
+  // hoverTrack = (color, position) => {
+  //   this.setState({
+  //     hoverStats:{
+  // :this.state.hoverStats.colors[color].amount ++,
+  // :this.state.hoverStats.positions[position].amount ++,
+  //     }
+      
+  //   })
+  // }
+
+  onButtonHover = (hovered) => {
+    let newState = {...this.state};
+
+    console.log(newState)
+    newState.buttons.hoverStats.colors[hovered.color].amount ++;
+    newState.buttons.hoverStats.positions[hovered.position].amount ++;
+    newState.session.log = {...newState.session.log,
+        [`num(${newState.buttons.hoverStats.colors[hovered.color].amount})"${hovered.color} ${hovered.position} press/hover on"`]:Date.now(),
+      }
+    this.setState({
+
+      newState
+
+    //   button:{
+
+    //   },
+    //   session:{
+    //     where:this.state.session.where,
+    //     mobile:this.state.session.mobile,
+    //     log:{...this.state.session.log, 
+    //       [`"${hovered.color} ${hovered.position} press/hover on"`]:Date.now(),
+    //   }
+    // }
+
+  })
+
 
   }
 
   onHoverOff = (e) => {
-    let i = 1;
     console.log(e.target.className)
 
 
@@ -110,40 +178,35 @@ class App extends Component {
     //   }
     // })
 
-    
+
   }
 
-  onButtonClick = (e) => {
-    let event = e.target.className.split(" ");
-    let clicked = {
-      color : event[0],
-      position: event[1]
-    }
-    console.log(clicked);
-    console.log(event);
+  onButtonClick = (clicked, hoverStats, logs, id) => {
 
     this.setState({
       buttons:{
         pressed:clicked,
-        hoverAmount:{
-
-        },
-        hoverTime:{
-
-        }
+        hoverStats,
       },
       session:{
+        id:id,
         where:this.state.session.where,
         mobile:this.mobilecheck(),
-        log:{...this.state.session.log, 
-          [`${JSON.stringify(clicked)} press`]: Date.now(),
-          }
+        log:{
+
+           
+          [`"${clicked.color} ${clicked.position}" press`]: Date.now(),
+          ...logs,
+        }
       }
     })
 
   }
 
+ 
+
 render() {
+
   const cookies = new Cookies();
 
   const statsPage = (props) => {
@@ -155,18 +218,25 @@ render() {
   const trackPage = (props) => {
     return (
       <Tracker 
+      id={sessionId}
       handleClick={this.onButtonClick}
       handleHover={this.onButtonHover}
       hoverOff={this.onHoverOff}
+      hoverStats={this.state.buttons.hoverStats}
+      log={this.state.session.log}
       {...props}
       />
     )
   }
 
-  console.log(this.state)
-  sessionStorage.setItem('sessionId', uuid());
 
-  cookies.set('cookie', sessionStorage.getItem('sessionId'))
+
+  console.log(this.state)
+
+  sessionStorage.setItem('sessionId', uuid());
+  let sessionId = sessionStorage.getItem('sessionId')
+  cookies.set('cookie', sessionId)
+
       return (
         <div className="App">
           
