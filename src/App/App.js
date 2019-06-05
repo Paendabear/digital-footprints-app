@@ -56,6 +56,7 @@ class App extends Component {
       },
       session:{
         id:null,
+        timeAlive:0,
         where: {lat:null,lng:null},
         mobile: null,
         log:{
@@ -190,6 +191,7 @@ class App extends Component {
       },
       session:{
         id:id,
+        timeAlive: (Date.now() - this.state.timeStart),
         where:this.state.session.where,
         mobile:this.mobilecheck(),
         log:{
@@ -240,7 +242,26 @@ render() {
 
   const statsPage = (props) => {
       return (
-        <Stats where={this.state.session.where} {...props}/> 
+        <Stats 
+        where={this.state.session.where}
+        stats={{
+          time: this.state.session.timeAlive,
+          mobile: this.state.session.mobile,
+          pressed: this.state.buttons.pressed,
+          redHoverTime: this.state.buttons.hoverStats.colors.red.time, 
+          redHoverAmount: this.state.buttons.hoverStats.colors.red.amount,
+          blueHoverTime: this.state.buttons.hoverStats.colors.blue.time, 
+          blueHoverAmount: this.state.buttons.hoverStats.colors.blue.amount,
+          yellowHoverTime: this.state.buttons.hoverStats.colors.yellow.time, 
+          yellowHoverAmount: this.state.buttons.hoverStats.colors.yellow.amount,
+          oneHoverTime: this.state.buttons.hoverStats.positions[1].time, 
+          oneHoverAmount: this.state.buttons.hoverStats.positions[1].amount,
+          twoHoverTime: this.state.buttons.hoverStats.positions[2].time, 
+          twoHoverAmount: this.state.buttons.hoverStats.positions[2].amount,
+          threeHoverTime: this.state.buttons.hoverStats.positions[3].time, 
+          threeHoverAmount: this.state.buttons.hoverStats.positions[3].amount,
+        }}
+        {...props}/> 
       )
   }
 

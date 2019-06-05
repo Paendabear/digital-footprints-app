@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ErrorBoundary from '../ErrorBoundaries/ErrorBoundary'
 import API from '../App/API';
 import GoogleApiWrapper from '../maps/Map';
-
+import Charts from './Charts';
 
 
 export default class Stats extends Component {
@@ -41,6 +41,8 @@ export default class Stats extends Component {
         // API.apiPost({name:'test2', type:'folders'});
         this.getStats();
         console.log(this.props.where)
+
+
       }
 
 
@@ -54,6 +56,8 @@ export default class Stats extends Component {
                 {JSON.stringify(Stats)}
             </div>
             {console.log(this.props.where)}
+            <Charts 
+              stats={this.props.stats}/>
             <GoogleApiWrapper where={this.props.where}/>
         </section>
     )
