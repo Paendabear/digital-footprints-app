@@ -7,9 +7,9 @@ export default class Tracker extends Component {
     }
     
 
-componentDidMount() {
+// componentDidMount() {
     
-}
+// }
 
     getButton = (e) => {
           let clicked = {};
@@ -22,23 +22,18 @@ componentDidMount() {
 
     render(){
         const teams = ['red','blue','yellow']
-        function shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
-        
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
-        
-            // Pick a remaining element...
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-        
-            // And swap it with the current element.
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
+        function shuffle(arr) {
+            var i,
+                j,
+                temp;
+            for (i = arr.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
-            return array;
-        }
+            return arr;    
+        };
         let rTeams = shuffle(teams);
 
         let timeHovers={

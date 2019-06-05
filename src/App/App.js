@@ -201,9 +201,38 @@ class App extends Component {
       }
     })
 
+    this.updateState();
+
+
+    let trail = {
+      sessionId : id,
+      mobile: this.state.session.mobile, 
+      sessionTime:(Date.now() - this.state.timeStart), 
+      lat: this.state.session.where.lat,  
+      lng: this.state.session.where.lng, 
+      buttonPressed: `${clicked.color} ${clicked.position}`,
+      redHoverTime: this.state.buttons.hoverStats.colors.red.time, 
+      redHoverAmount: this.state.buttons.hoverStats.colors.red.amount,
+      blueHoverTime: this.state.buttons.hoverStats.colors.blue.time, 
+      blueHoverAmount: this.state.buttons.hoverStats.colors.blue.amount,
+      yellowHoverTime: this.state.buttons.hoverStats.colors.yellow.time, 
+      yellowHoverAmount: this.state.buttons.hoverStats.colors.yellow.amount,
+      oneHoverTime: this.state.buttons.hoverStats.positions[1].time, 
+      oneHoverAmount: this.state.buttons.hoverStats.positions[1].amount,
+      twoHoverTime: this.state.buttons.hoverStats.positions[2].time, 
+      twoHoverAmount: this.state.buttons.hoverStats.positions[2].amount,
+      threeHoverTime: this.state.buttons.hoverStats.positions[3].time, 
+      threeHoverAmount: this.state.buttons.hoverStats.positions[3].amount,
+      metaLog:"test",
+    }
+
+    API.apiPOST(trail)
+    console.log(trail)
   }
 
- 
+ updateState = () => {
+   this.setState({...this.state})
+ }
 
 render() {
 

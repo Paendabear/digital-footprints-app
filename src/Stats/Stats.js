@@ -15,7 +15,7 @@ export default class Stats extends Component {
 
     getStats = () => {
     let Stats = {}
-        API.apiGet()
+    API.apiGet()
     .then(res => {
         if(!res.ok) {
           throw new Error('Something went wrong, please try again later.');
