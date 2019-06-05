@@ -58,7 +58,7 @@ export default class Tracker extends Component {
     hoverStats.positions[hovered.position].time += (Date.now() - timeHovers[hovered.position])
     log = {...log,
         [`num(${hoverStats.colors[hovered.color].amount})"${hovered.color} ${hovered.position}" hover off`]:Date.now(),};
-    console.log(log)
+    // console.log(log)
     };
 
  let handleHover = (e) => {

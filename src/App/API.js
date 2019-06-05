@@ -27,7 +27,7 @@ export default class API extends Component{
                 'content-type':'application/json',
             }
         };
-        console.log(options.body)
+        // console.log(options.body)
         return fetch(apiURL, options)
     }
 

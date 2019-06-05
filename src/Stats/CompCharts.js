@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2'
 
-export default class Charts extends Component{
+export default class CompCharts extends Component{
     constructor(){
         super();
     }
 
     render() {
-        // console.log(this.props.stats)
+        console.log(this.props.stats)
         return (
             <>
             <div className="colors-charts">
@@ -16,9 +16,9 @@ export default class Charts extends Component{
                         labels: ['red', 'blue', 'yellow'],
                         datasets: [{
                             label: 'Amount hovered',
-                            data:[this.props.stats.redHoverAmount, 
-                                this.props.stats.blueHoverAmount, 
-                                this.props.stats.yellowHoverAmount],
+                            data:[this.props.stats.redHoverAmountAvg, 
+                                this.props.stats.blueHoverAmountAvg, 
+                                this.props.stats.yellowHoverAmountAvg],
                             backgroundColor:[
                                 'rgba(255, 99, 132, 0.6)',
                                 'rgba(54, 162, 235, 0.6)',
@@ -47,9 +47,9 @@ export default class Charts extends Component{
                         labels: ['red', 'blue', 'yellow'],
                         datasets: [{
                             label: 'time hovered',
-                            data:[this.props.stats.redHoverTime, 
-                                this.props.stats.blueHoverTime, 
-                                this.props.stats.yellowHoverTime],
+                            data:[this.props.stats.redHoverTimeAvg, 
+                                this.props.stats.blueHoverTimeAvg, 
+                                this.props.stats.yellowHoverTimeAvg],
                             backgroundColor:[
                                 'rgba(255, 99, 132, 0.6)',
                                 'rgba(54, 162, 235, 0.6)',
@@ -80,9 +80,9 @@ export default class Charts extends Component{
                         labels: ['one', 'two', 'three'],
                         datasets: [{
                             label: 'Amount hovered',
-                            data:[this.props.stats.oneHoverAmount, 
-                                this.props.stats.twoHoverAmount, 
-                                this.props.stats.threeHoverAmount],
+                            data:[this.props.stats.oneHoverAmountAvg, 
+                                this.props.stats.twoHoverAmountAvg, 
+                                this.props.stats.threeHoverAmountAvg],
                             backgroundColor:[
                                 'rgba(75, 192, 192, 0.6)',
                                 'rgba(153, 102, 255, 0.6)',
@@ -111,9 +111,9 @@ export default class Charts extends Component{
                         labels: ['one', 'two', 'three'],
                         datasets: [{
                             label: 'time hovered',
-                            data:[this.props.stats.oneHoverTime, 
-                                this.props.stats.twoHoverTime, 
-                                this.props.stats.threeHoverTime],
+                            data:[this.props.stats.oneHoverTimeAvg, 
+                                this.props.stats.twoHoverTimeAvg, 
+                                this.props.stats.threeHoverTimeAvg],
                             backgroundColor:[
                                 'rgba(75, 192, 192, 0.6)',
                                 'rgba(153, 102, 255, 0.6)',
@@ -142,12 +142,3 @@ export default class Charts extends Component{
         )
     }
 }
-
-// ChartData:{
-//     labels: [],
-//     datasets: [{
-//         label: '',
-//         data:[],
-//         backgroundColor:[],
-//     }]
-// }

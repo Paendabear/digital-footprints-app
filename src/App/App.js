@@ -9,6 +9,7 @@ import Stats from '../Stats/Stats';
 import Tracker from '../Tracker/Tracker';
 import Oops from '../Oops/Oops';
 import Cookies from 'universal-cookie';
+
 //import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 //import GoogleApiWrapper from './maps/Map';
 
@@ -62,6 +63,7 @@ class App extends Component {
         log:{
         }
       },
+      compStats: {},
       error:null,
     }
   }
@@ -74,7 +76,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    console.log(this.state)
+    // console.log(this.state)
     
     let geoOptions = {
       enableHighAccuracy: true,
@@ -113,7 +115,7 @@ class App extends Component {
   }
 
   geoFailure = (err) => {
-    console.log(err)
+    // console.log(err)
     this.setState({
       error:err.message,
       session: {
@@ -128,81 +130,24 @@ class App extends Component {
     });
   }
 
-  // hoverTrack = (color, position) => {
-  //   this.setState({
-  //     hoverStats:{
-  // :this.state.hoverStats.colors[color].amount ++,
-  // :this.state.hoverStats.positions[position].amount ++,
-  //     }
-      
-  //   })
-  // }
-
   onButtonHover = (hovered) => {
     let newState = {...this.state};
-
-    console.log(newState)
     newState.buttons.hoverStats.colors[hovered.color].amount ++;
     newState.buttons.hoverStats.positions[hovered.position].amount ++;
     newState.session.log = {...newState.session.log,
         [`num(${newState.buttons.hoverStats.colors[hovered.color].amount})"${hovered.color} ${hovered.position} press/hover on"`]:Date.now(),
       }
     this.setState({
-
       newState
-
-    //   button:{
-
-    //   },
-    //   session:{
-    //     where:this.state.session.where,
-    //     mobile:this.state.session.mobile,
-    //     log:{...this.state.session.log, 
-    //       [`"${hovered.color} ${hovered.position} press/hover on"`]:Date.now(),
-    //   }
-    // }
-
   })
-
-
   }
 
   onHoverOff = (e) => {
-    console.log(e.target.className)
-
-
-    // this.setState({
-    //   pressed:this.state.buttons.pressed,
-    //   hoverAmount:i++,
-    //   hoverTime:{
-
-    //   }
-    // })
-
+    // console.log(e.target.className)
 
   }
 
   onButtonClick = (clicked, hoverStats, logs, id) => {
-
-    this.setState({
-      buttons:{
-        pressed:clicked,
-        hoverStats,
-      },
-      session:{
-        id:id,
-        timeAlive: (Date.now() - this.state.timeStart),
-        where:this.state.session.where,
-        mobile:this.mobilecheck(),
-        log:{
-
-           
-          [`"${clicked.color} ${clicked.position}" press`]: Date.now(),
-          ...logs,
-        }
-      }
-    })
-
     this.updateState();
 
 
@@ -229,12 +174,51 @@ class App extends Component {
     }
 
     API.apiPOST(trail)
-    console.log(trail)
-  }
+    API.apiGet()
+    .then(res => {
+        if(!res.ok) {
+          throw new Error('Something went wrong, please try again later.');
+        }
+        return res;
+      })
+      .then(res => res.json())
+      .then(data => { 
+      
+        this.setState({
+          buttons:{
+            pressed:clicked,
+            hoverStats,
+          },
+          session:{
+            id:id,
+            timeAlive: (Date.now() - this.state.timeStart),
+            where:this.state.session.where,
+            mobile:this.mobilecheck(),
+            log:{
+              [`"${clicked.color} ${clicked.position}" press`]: Date.now(),
+              ...logs,
+            }
+          },
+          compStats: data,
+        })
 
- updateState = () => {
-   this.setState({...this.state})
- }
+        console.log(data);
+        console.log(this.state.compStats)
+        return (Stats)
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        });
+      });
+
+  // console.log(trail)
+
+    }
+
+  updateState = () => {
+    this.setState({...this.state})
+  }
 
 render() {
 
@@ -261,6 +245,7 @@ render() {
           threeHoverTime: this.state.buttons.hoverStats.positions[3].time, 
           threeHoverAmount: this.state.buttons.hoverStats.positions[3].amount,
         }}
+        compStats={{...this.state.compStats[0]}}
         {...props}/> 
       )
   }
