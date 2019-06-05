@@ -20,9 +20,9 @@ export default class CompCharts extends Component{
                                 this.props.stats.blueHoverAmountAvg, 
                                 this.props.stats.yellowHoverAmountAvg],
                             backgroundColor:[
-                                'rgba(255, 99, 132, 0.6)',
-                                'rgba(54, 162, 235, 0.6)',
-                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(255,71,71, 0.6)',
+                                'rgba(14,104,206, 0.6)',
+                                'rgba(238,220,49, 0.6)',
                             ],
                         }]
                     }}
@@ -51,9 +51,9 @@ export default class CompCharts extends Component{
                                 this.props.stats.blueHoverTimeAvg, 
                                 this.props.stats.yellowHoverTimeAvg],
                             backgroundColor:[
-                                'rgba(255, 99, 132, 0.6)',
-                                'rgba(54, 162, 235, 0.6)',
-                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(255,71,71, 0.6)',
+                                'rgba(14,104,206, 0.6)',
+                                'rgba(238,220,49, 0.6)',
                             ],
                         }]
                     }}
@@ -84,9 +84,9 @@ export default class CompCharts extends Component{
                                 this.props.stats.twoHoverAmountAvg, 
                                 this.props.stats.threeHoverAmountAvg],
                             backgroundColor:[
-                                'rgba(75, 192, 192, 0.6)',
-                                'rgba(153, 102, 255, 0.6)',
-                                'rgba(255, 159, 64, 0.6)',
+                                'rgba(68,190,199, 0.6)',
+                                'rgba(214,150,187, 0.6)',
+                                'rgba(255,195,0, 0.6)',
                             ],
                         }]
                     }}
@@ -115,9 +115,9 @@ export default class CompCharts extends Component{
                                 this.props.stats.twoHoverTimeAvg, 
                                 this.props.stats.threeHoverTimeAvg],
                             backgroundColor:[
-                                'rgba(75, 192, 192, 0.6)',
-                                'rgba(153, 102, 255, 0.6)',
-                                'rgba(255, 159, 64, 0.6)',
+                                'rgba(68,190,199, 0.6)',
+                                'rgba(214,150,187, 0.6)',
+                                'rgba(255,195,0, 0.6)',
                             ],
                         }]
                     }}
