@@ -91,7 +91,7 @@ export default class Tracker extends Component {
         
         <div id="main">
         <header className="splash">
-            Choose a side.
+            Choose a side
         </header>
         <section className='TrackPage'>
             <div className='team-section'>

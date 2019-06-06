@@ -1,24 +1,31 @@
 #main{
     height:100vh;
-    width:100%;
+    width:100vw;
     position:fixed;
 }
 
+*
 .splash{
     height:100%;
-    width:50%;
-    background-color: #a8dbdb;
+    width:27%;
+    background-color: #F4F4F4;
     box-shadow: 10px 0px 30px rgba(0,0,0,.4);
     position:absolute;
     z-index:999;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    font-size:23vw;
+    font-weight:700;
+    color:rgba(0, 0, 0, 0.3);
+    overflow:hidden;
 }
 
 .TrackPage{
     position:absolute;
     height:100%;
-    width:50%;
-    background-color:#b4a4ee ;
-    left:50%;
+    width:75%;
+    background-color:#f3f4f4 ;
+    left:25%;
 }
 
 .team-section ul{
@@ -26,7 +33,7 @@
     margin: 0px;
     padding: 0px;
     position:absolute;
-    top:30%;
+    top:25%;
    
 } 
 
@@ -51,15 +58,15 @@
 
 
 .team-section ul li .red{
-    background-color:red;
+    background-color:#EA4335;
 }
 
 .team-section ul li .blue{
-    background-color:blue;
+    background-color:#4285F4;
 }
 
 .team-section ul li .yellow{
-    background-color:yellow;
+    background-color:#FBBC05;
 }
 
 
@@ -67,5 +74,15 @@
 
 
 .team-section ul li:hover .team-button{
-    width: 250px;
+    width: 70vw;
+}
+
+.team-section ul li button a {
+    text-decoration:none;
+    color:rgba(255, 255, 255, 0.6);
+}
+
+.team-section ul li button a:hover {
+    text-decoration:none;
+    color:rgba(199, 198, 198, 0.4);
 }
