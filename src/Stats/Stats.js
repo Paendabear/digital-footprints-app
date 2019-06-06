@@ -30,7 +30,7 @@ export default class Stats extends Component {
 
          return (
         <section className='LandingPage'>
-            <div className='splash'>
+            <div className='stat-main'>
                 test stats page 
             </div>
             {console.log(this.props.where)}

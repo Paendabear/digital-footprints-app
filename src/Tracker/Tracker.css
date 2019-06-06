@@ -1,0 +1,71 @@
+#main{
+    height:100vh;
+    width:100%;
+    position:fixed;
+}
+
+.splash{
+    height:100%;
+    width:50%;
+    background-color: #a8dbdb;
+    box-shadow: 10px 0px 30px rgba(0,0,0,.4);
+    position:absolute;
+    z-index:999;
+}
+
+.TrackPage{
+    position:absolute;
+    height:100%;
+    width:50%;
+    background-color:#b4a4ee ;
+    left:50%;
+}
+
+.team-section ul{
+    list-style:none;
+    margin: 0px;
+    padding: 0px;
+    position:absolute;
+    top:30%;
+   
+} 
+
+.team-section ul li{
+    height: 100px;
+    width: 250px;
+    z-index:1;
+}
+
+.team-section ul li button{
+    height: 100px;
+    width: 0px;
+    font-size:60px;
+    line-height:100px;
+    cursor:pointer;
+    text-align: right;
+    background-color: rgba(255, 255, 255, 0.1);
+    display:block;
+    transition: all .5s;
+    overflow:hidden;
+}
+
+
+.team-section ul li .red{
+    background-color:red;
+}
+
+.team-section ul li .blue{
+    background-color:blue;
+}
+
+.team-section ul li .yellow{
+    background-color:yellow;
+}
+
+
+
+
+
+.team-section ul li:hover .team-button{
+    width: 250px;
+}

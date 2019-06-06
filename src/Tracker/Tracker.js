@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import './Tracker.css';
 import { NavLink, Link } from 'react-router-dom'
 
 export default class Tracker extends Component {
@@ -88,31 +89,35 @@ export default class Tracker extends Component {
     let i = 1;
         return (
         
-        <>
-        <header className="">
-            test Tracker page
+        <div id="main">
+        <header className="splash">
+            Choose a side.
         </header>
         <section className='TrackPage'>
-            <div className='splash'>
-                {rTeams.map( team => 
-                    <button  
-                        className="team-button" 
-                        >
-                        <NavLink
-                            className={`${team} ${i++}`}
-                            to={`/about`}
-                            onClick={handleOnClick}
-                            onMouseOver={handleHover}
-                            onMouseOut={hoverOff}
-                            onTouchStart={handleHover} 
-                            onTouchEnd={hoverOff} 
-                            >
-                            {team}
-                        </NavLink>
-                    </button>)}
+            <div className='team-section'>
+                <ul>
+                    {rTeams.map( team => 
+                        <li className="team">
+                            <button  
+                                className={`team-button ${team}`} 
+                                >
+                                <NavLink
+                                    className={`${team} ${i++}`}
+                                    to={`/about`}
+                                    onClick={handleOnClick}
+                                    onMouseOver={handleHover}
+                                    onMouseOut={hoverOff}
+                                    onTouchStart={handleHover} 
+                                    onTouchEnd={hoverOff} 
+                                    >
+                                    {team}
+                                </NavLink>
+                            </button>
+                        </li>)}
+                </ul>
             </div>
         </section>
-        </>
+        </div>
     )
 
     }
