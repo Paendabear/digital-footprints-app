@@ -10,7 +10,7 @@ export default function Landing(props) {
 
     return (
         <div className='LandingPage'>
-            <section>
+            <section className="slide">
                 <header role="banner">
                     <h1>Digital footprints</h1>
                     <h2>See yours</h2>
@@ -27,7 +27,7 @@ export default function Landing(props) {
                 </div>
             </section>
 
-            <section>
+            <section className="slide">
                 <div>
                     <header>
                         <h3>Data and what it means to you</h3>
@@ -41,7 +41,7 @@ export default function Landing(props) {
                 </div>
             </section>
 
-            <section>
+            <section className="slide">
                 <div>
                     <header>
                         <h3>Please spread the word</h3>
@@ -55,7 +55,7 @@ export default function Landing(props) {
                 </div>
             </section>
 
-            <section>
+            <section className="slide">
                 <div>
                     <header>
                         <h3>See what I have tracked</h3>

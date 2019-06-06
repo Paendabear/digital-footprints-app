@@ -47,9 +47,10 @@ export default class Stats extends Component {
                   stats={this.props.compStats}
                   />
               </div>
+              <GoogleApiWrapper where={this.props.where}/>
             </div>
 
-            <GoogleApiWrapper where={this.props.where}/>
+            
         </section>
     )
     }
