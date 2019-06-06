@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom'
+import './Landing.css';
 
 import PropTypes from 'prop-types';
 import ErrorBoundary from '../ErrorBoundaries/ErrorBoundary'
@@ -8,21 +9,23 @@ import ErrorBoundary from '../ErrorBoundaries/ErrorBoundary'
 export default function Landing(props) {
 
     return (
-        <section className='LandingPage'>
-            <header role="banner">
-                <h1>Digital footprints</h1>
-                <h2>See yours</h2>
-            </header>
-
-            <div className='title'>
-                <p>[<em>placeholder for popular free websites/apps ie. facebook, google, amazon, youtube</em>]</p>
-                <p>
-                    The second one lands on a webpage it is "listening" to what you are doing mouse-clicks, taps, scrolls, zoom-in, zoom-outs, anything one does to use the website only works because the webpage/app listens for those things.
-                </p>
-                <p>
-                    Websites/apps are also capable of tracking all the things that the website is "listening" for. 
-                </p>
-            </div>
+        <div className='LandingPage'>
+            <section>
+                <header role="banner">
+                    <h1>Digital footprints</h1>
+                    <h2>See yours</h2>
+                </header>
+    
+                <div className='title'>
+                    <p>[<em>placeholder for popular free websites/apps ie. facebook, google, amazon, youtube</em>]</p>
+                    <p>
+                        The second one lands on a webpage it is "listening" to what you are doing mouse-clicks, taps, scrolls, zoom-in, zoom-outs, anything one does to use the website only works because the webpage/app listens for those things.
+                    </p>
+                    <p>
+                        Websites/apps are also capable of tracking all the things that the website is "listening" for. 
+                    </p>
+                </div>
+            </section>
 
             <section>
                 <div>
@@ -67,6 +70,6 @@ export default function Landing(props) {
                 </div>
             </section>
 
-        </section>
+        </div>
     )
 }
