@@ -7,6 +7,11 @@ export default class Charts extends Component{
     // }
 
     render() {
+        let convertToSec = (ms) => {
+            return (ms/1000).toFixed(2);
+        } 
+
+        // .convertToSec()
         // console.log(this.props.stats)
         return (
             <>
@@ -32,7 +37,7 @@ export default class Charts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'amount of hovers (colors)',
+                                text:'Amount of hovers (colors)',
                             } ,
                             legend:{
                                 display:true,
@@ -48,9 +53,9 @@ export default class Charts extends Component{
                         labels: ['red', 'blue', 'yellow'],
                         datasets: [{
                             label: 'time hovered (colors)',
-                            data:[this.props.stats.redHoverTime, 
-                                this.props.stats.blueHoverTime, 
-                                this.props.stats.yellowHoverTime],
+                            data:[convertToSec(this.props.stats.redHoverTime), 
+                                convertToSec(this.props.stats.blueHoverTime), 
+                                convertToSec(this.props.stats.yellowHoverTime)],
                             backgroundColor:[
                                 'rgba(255, 99, 132, 0.6)',
                                 'rgba(54, 162, 235, 0.6)',
@@ -64,7 +69,7 @@ export default class Charts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'time hovered (colors)',
+                                text:'Second(s) hovered (colors)',
                             } ,
                             legend:{
                                 display:false,
@@ -97,7 +102,7 @@ export default class Charts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'amount of hovers (positions)',
+                                text:'Amount of hovers (positions)',
                             } ,
                             legend:{
                                 display:true,
@@ -112,9 +117,9 @@ export default class Charts extends Component{
                         labels: ['one', 'two', 'three'],
                         datasets: [{
                             label: 'time hovered (positions)',
-                            data:[this.props.stats.oneHoverTime, 
-                                this.props.stats.twoHoverTime, 
-                                this.props.stats.threeHoverTime],
+                            data:[convertToSec(this.props.stats.oneHoverTime), 
+                                convertToSec(this.props.stats.twoHoverTime), 
+                                convertToSec(this.props.stats.threeHoverTime)],
                             backgroundColor:[
                                 'rgba(75, 192, 192, 0.6)',
                                 'rgba(153, 102, 255, 0.6)',
@@ -128,7 +133,7 @@ export default class Charts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'time hovered (positions)',
+                                text:'Second(s) hovered (positions)',
                             } ,
                             legend:{
                                 display:false,
