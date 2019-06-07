@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {Bar, Line, Pie} from 'react-chartjs-2'
+import {Bar,Pie} from 'react-chartjs-2'
 
 export default class Charts extends Component{
-    constructor(){
-        super();
-    }
+    // constructor(){
+    //     super();
+    // }
 
     render() {
         // console.log(this.props.stats)
@@ -74,7 +74,7 @@ export default class Charts extends Component{
                 />
             </div>
 
-            <div className="positions-charts card">
+            <div className="positions-charts card sLock">
                 <Pie
                     data={{
                         labels: ['one', 'two', 'three'],

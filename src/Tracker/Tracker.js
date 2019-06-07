@@ -1,11 +1,11 @@
 import React , {Component} from 'react';
 import './Tracker.css';
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink,} from 'react-router-dom'
 
 export default class Tracker extends Component {
-    constructor() {
-        super();
-    }
+    // constructor() {
+    //     super();
+    // }
     
 
 // componentDidMount() {
@@ -15,10 +15,11 @@ export default class Tracker extends Component {
     getButton = (e) => {
           let clicked = {};
         let event = e.target.className.split(" ");
-        return clicked = {
+        clicked = {
           color : event[0],
           position: event[1]
         }
+        return clicked
       }
 
     render(){
@@ -91,7 +92,7 @@ export default class Tracker extends Component {
         
         <div id="main">
         <header className="splash">
-            Choose a side
+            Choose a color
         </header>
         <section className='TrackPage'>
             <div className='team-section'>

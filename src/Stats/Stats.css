@@ -19,3 +19,44 @@
     border-bottom: 1px solid #f1f1f1;
     
 }
+
+/* .StatsPage{
+    scroll-snap-type:y mandatory;
+} */
+
+.sLock{
+    scroll-snap-align:start;
+}
+
+.main-text{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.location-title{
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.closer {
+    background-color:rgb(240, 240, 240);
+    display: block;
+}
+
+.closer > ul {
+    text-align: center;
+    padding: 20px;
+    margin:0;
+}
+
+.closer > ul > li{
+    display: block;
+    
+}
+
+.closer > ul > li > a{
+    display: inline-block;
+    text-decoration:none;
+    color:darkblue;
+}
+

@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Link , Redirect , Switch} from 'react-router-dom'
-import ErrorBoundary from '../ErrorBoundaries/ErrorBoundary'
+import { Route, Redirect , Switch} from 'react-router-dom'
+
 import API from './API';
 import Landing from '../Landing/Landing';
 import Stats from '../Stats/Stats';
@@ -10,8 +10,7 @@ import Tracker from '../Tracker/Tracker';
 import Oops from '../Oops/Oops';
 import Cookies from 'universal-cookie';
 
-//import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-//import GoogleApiWrapper from './maps/Map';
+// import ErrorBoundary from '../ErrorBoundaries/ErrorBoundary'
 
 const uuid = require('uuid/v4');
 
@@ -267,7 +266,7 @@ render() {
 
 
 
-  console.log(this.state)
+  // console.log(this.state)
 
   sessionStorage.setItem('sessionId', uuid());
   let sessionId = sessionStorage.getItem('sessionId')
