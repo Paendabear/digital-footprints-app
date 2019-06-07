@@ -18,11 +18,11 @@ export default function Landing(props) {
     
                 <div className='title'>
                     <div className="svg-bin">
-                    <FontAwesomeIcon icon={['fab', 'amazon']} />
-                    <FontAwesomeIcon icon={['fab', 'google']} />
-                    <FontAwesomeIcon icon={['fab', 'apple']} />
-                    <FontAwesomeIcon icon={['fab', 'youtube']} />
-                    <FontAwesomeIcon icon={['fab', 'reddit']} />
+                    <FontAwesomeIcon icon={['fab', 'amazon']} size={(props.mobile) ? "3x" : "5x"} />
+                    <FontAwesomeIcon icon={['fab', 'google']} size={(props.mobile) ? "3x" : "5x"} />
+                    <FontAwesomeIcon icon={['fab', 'apple']} size={(props.mobile) ? "3x" : "5x"} />
+                    <FontAwesomeIcon icon={['fab', 'youtube']} size={(props.mobile) ? "3x" : "5x"}/>
+                    <FontAwesomeIcon icon={['fab', 'reddit']} size={(props.mobile) ? "3x" : "5x"}/>
                     </div>
                     <p>
                         The second one lands on a webpage it is "listening" to what you are doing mouse-clicks, taps, scrolls, zoom-in, zoom-outs, anything one does to use the website only works because the webpage/app listens for those things.
@@ -73,11 +73,6 @@ export default function Landing(props) {
                     </button>
                 </div>
             </section>
-
-            {/* <section className="slide">
-                
-            </section> */}
-
         </div>
     )
 }

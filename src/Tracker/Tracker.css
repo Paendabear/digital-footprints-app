@@ -18,6 +18,9 @@
     font-weight:700;
     color:rgba(0, 0, 0, 0.3);
     overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .TrackPage{
@@ -26,6 +29,8 @@
     width:75%;
     background-color:#f3f4f4 ;
     left:25%;
+    display: flex;
+    align-items: center;
 }
 
 .team-section ul{
@@ -87,5 +92,23 @@
 
 .team-section ul li button a:hover {
     text-decoration:none;
+    
     color:rgba(199, 198, 198, 0.4);
+}
+
+@media only screen and (min-width: 600px) {
+    /* For desktop browsers: */
+    .splash{
+        font-size:125px;
+        font-weight:1300;
+    }
+
+    .team-section ul li button a:hover {
+        color:rgba(255, 255, 255, 0.6);
+        
+    }
+
+    .team-section ul li button a {
+        color:rgba(199, 198, 198, 0.4);
+    }
 }

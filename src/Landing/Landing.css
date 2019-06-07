@@ -64,6 +64,10 @@ h1{
     text-align:center;
     background-color:#3b5998;
     box-shadow: 0 3px 4px rgba(0,0,0,0.16), 0 3px 4px rgba(0,0,0,0.23);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index:200; 
 }
 
 .NavToStats:hover {
@@ -87,6 +91,7 @@ h1{
     font-size:14vw;
     font-weight:500;
     margin: 0;
+    margin-top:10px;
 }
 
 .slide div p {
@@ -96,4 +101,47 @@ h1{
 
 .sub-banner{
     margin-top: 0px;
+}
+
+.svg-bin{
+    left:25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For desktop browsers: */
+
+    h1{
+        font-size:115px;
+        font-weight:800;
+    }
+
+    .sub-banner{
+        font-weight:800;
+    }
+
+    .svg-bin{
+        justify-content: flex-start;
+    }
+
+    .slide-title{
+        
+        font-size:80px;
+        font-weight:800;
+    }
+
+    .slide div p {
+        color:#f1f1f1;
+        font-size:32px;
+        font-weight:400;
+    }
+
+    .NavToStats{
+        font-size: 8vw;
+        line-height:9vh;
+        font-weight:600;
+    }
+
 }

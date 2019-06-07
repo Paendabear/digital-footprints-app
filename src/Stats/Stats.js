@@ -36,8 +36,8 @@ export default class Stats extends Component {
          
             <div className='stat-main sLock'>
                 <div className="main-text">
-                  <h2>Session Stats</h2> 
-                  <div>
+                  <h2 className="session-title">Session Stats</h2> 
+                  <div className="session-sub">
                     <p>
                     {this.props.stats.time/1000} second(s) to choose {this.props.stats.pressed.color} in position:{this.props.stats.pressed.position} 
                     </p>                  
@@ -45,11 +45,11 @@ export default class Stats extends Component {
                   </div>
                 </div>
 
-                <div >
+                <div className="location-info">
                   <h4 className="location-title">Session Location</h4>
                   <img 
                   className="map"
-                  src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.props.where.lat},${this.props.where.lng}&zoom=11&size=640x150&${(this.props.mobile) ? "scale=1" : "scale=2"}&maptype=roadmap&key=AIzaSyCRnCMg1_k2kYJYPc3-E9faZNerjnT31Hg`} 
+                  src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.props.where.lat},${this.props.where.lng}&zoom=11&${(this.props.mobile) ? "size=640x150" : "size=450x450"}&maptype=roadmap&key=AIzaSyCRnCMg1_k2kYJYPc3-E9faZNerjnT31Hg`} 
                   alt="map goes here"
                   />
                 </div>

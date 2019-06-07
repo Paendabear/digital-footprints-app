@@ -60,3 +60,72 @@
     color:darkblue;
 }
 
+@media only screen and (min-width: 600px) {
+
+    .stat-main{
+        height:100%;
+        width:27%;
+        background-color: #F4F4F4;
+        box-shadow: 10px 0px 30px rgba(0,0,0,.4);
+        position:absolute;
+        z-index:999;
+        /* font-size:23vw;
+        font-weight:700; */
+        color:rgba(0, 0, 0, );
+        overflow:hidden;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+    }
+
+    .data-container{
+        padding-left:12px;
+        position:absolute;
+        height:100%;
+        width:73%;
+        background-color:#f3f4f4 ;
+        left:27%;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-holder {
+        border-bottom: 1px solid #f1f1f1;
+        width:47%;
+        max-height:100vh;
+    }
+
+    .location-info{
+        width:100%;
+        position: absolute;
+        right:    0;
+        bottom:   0;
+    }
+
+    .location-title{
+        font-size:25px
+    }
+
+    .map{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .card{
+        max-height: 44vh;
+        overflow:scroll;
+    }
+
+    .session-title{
+        font-size: 45px;
+        font-weight: bolder;
+
+    }
+
+    .session-sub p{
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 35px;
+    }
+}

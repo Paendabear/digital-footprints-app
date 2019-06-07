@@ -264,7 +264,14 @@ render() {
     )
   }
 
-
+  const landingPage = (props) => {
+    return(
+      <Landing 
+        mobile={this.state.session.mobile}
+        {...props}
+      />
+    )
+    }
 
   // console.log(this.state)
 
@@ -278,7 +285,7 @@ render() {
           <main>
             <Switch>
               <Route exact path='/' component={trackPage}/>
-              <Route exact path='/about' component={Landing}/>
+              <Route exact path='/about' component={landingPage}/>
               <Route exact path='/stats' component={statsPage}/>
               <Route exact path='/404' component={Oops}/>
               <Redirect to='/404' />

@@ -37,7 +37,8 @@ export default class Charts extends Component{
                             legend:{
                                 display:true,
                                 position:'right',
-                            }
+                            },
+
                         }
                     }
                 />
