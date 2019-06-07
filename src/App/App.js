@@ -246,6 +246,7 @@ render() {
           threeHoverAmount: this.state.buttons.hoverStats.positions[3].amount,
         }}
         compStats={{...this.state.compStats[0]}}
+        mobile={this.state.session.mobile}
         {...props}/> 
       )
   }

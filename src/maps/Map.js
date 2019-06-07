@@ -13,11 +13,11 @@ export class MapContainer extends Component {
     console.log(config.MAP_API_KEY)
     {console.log(this.props.where)}
     return (
-      <Map google={this.props.google} zoom={14}
-      initialCenter={this.props.where}
+      <Map google={this.props.google} 
+            zoom={14}
+            initialCenter={this.props.where}
+            style={{width: '100%', height: '10%', position: 'relative'}}
       >
-       
- 
         <Marker onClick={this.onMarkerClick}
                 name={'Current location'} />
  

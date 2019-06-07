@@ -10,7 +10,7 @@ export default class Charts extends Component{
         // console.log(this.props.stats)
         return (
             <>
-            <div className="colors-charts">
+            <div className="colors-charts card">
                 <Pie
                     data={{
                         labels: ['red', 'blue', 'yellow'],
@@ -32,7 +32,7 @@ export default class Charts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'amount of hovers',
+                                text:'amount of hovers (colors)',
                             } ,
                             legend:{
                                 display:true,
@@ -46,7 +46,7 @@ export default class Charts extends Component{
                     data={{
                         labels: ['red', 'blue', 'yellow'],
                         datasets: [{
-                            label: 'time hovered',
+                            label: 'time hovered (colors)',
                             data:[this.props.stats.redHoverTime, 
                                 this.props.stats.blueHoverTime, 
                                 this.props.stats.yellowHoverTime],
@@ -63,10 +63,10 @@ export default class Charts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'time hovered',
+                                text:'time hovered (colors)',
                             } ,
                             legend:{
-                                display:true,
+                                display:false,
                                 position:'left',
                             }
                         }
@@ -74,12 +74,12 @@ export default class Charts extends Component{
                 />
             </div>
 
-            <div className="positions-charts">
-                <Bar
+            <div className="positions-charts card">
+                <Pie
                     data={{
                         labels: ['one', 'two', 'three'],
                         datasets: [{
-                            label: 'Amount hovered',
+                            label: 'Amount hovered (positions)',
                             data:[this.props.stats.oneHoverAmount, 
                                 this.props.stats.twoHoverAmount, 
                                 this.props.stats.threeHoverAmount],
@@ -96,7 +96,7 @@ export default class Charts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'amount of hovers',
+                                text:'amount of hovers (positions)',
                             } ,
                             legend:{
                                 display:true,
@@ -106,11 +106,11 @@ export default class Charts extends Component{
                     }
                 />
 
-                <Pie
+                <Bar
                     data={{
                         labels: ['one', 'two', 'three'],
                         datasets: [{
-                            label: 'time hovered',
+                            label: 'time hovered (positions)',
                             data:[this.props.stats.oneHoverTime, 
                                 this.props.stats.twoHoverTime, 
                                 this.props.stats.threeHoverTime],
@@ -127,10 +127,10 @@ export default class Charts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'time hovered',
+                                text:'time hovered (positions)',
                             } ,
                             legend:{
-                                display:true,
+                                display:false,
                                 position:'left',
                             }
                         }

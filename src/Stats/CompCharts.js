@@ -10,12 +10,12 @@ export default class CompCharts extends Component{
         console.log(this.props.stats)
         return (
             <>
-            <div className="colors-charts">
+            <div className="colors-charts card">
                 <Pie
                     data={{
                         labels: ['red', 'blue', 'yellow'],
                         datasets: [{
-                            label: 'Amount hovered',
+                            label: 'Amount hovered (colors)',
                             data:[this.props.stats.redHoverAmountAvg, 
                                 this.props.stats.blueHoverAmountAvg, 
                                 this.props.stats.yellowHoverAmountAvg],
@@ -32,7 +32,7 @@ export default class CompCharts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'amount of hovers',
+                                text:'amount of hovers (colors)',
                             } ,
                             legend:{
                                 display:true,
@@ -46,7 +46,7 @@ export default class CompCharts extends Component{
                     data={{
                         labels: ['red', 'blue', 'yellow'],
                         datasets: [{
-                            label: 'time hovered',
+                            label: 'time hovered (colors)',
                             data:[this.props.stats.redHoverTimeAvg, 
                                 this.props.stats.blueHoverTimeAvg, 
                                 this.props.stats.yellowHoverTimeAvg],
@@ -63,10 +63,10 @@ export default class CompCharts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'time hovered',
+                                text:'time hovered (colors)',
                             } ,
                             legend:{
-                                display:true,
+                                display:false,
                                 position:'left',
                             }
                         }
@@ -74,19 +74,19 @@ export default class CompCharts extends Component{
                 />
             </div>
 
-            <div className="positions-charts">
-                <Bar
+            <div className="positions-charts card">
+                <Pie
                     data={{
                         labels: ['one', 'two', 'three'],
                         datasets: [{
-                            label: 'Amount hovered',
+                            label: 'Amount hovered (positions)',
                             data:[this.props.stats.oneHoverAmountAvg, 
                                 this.props.stats.twoHoverAmountAvg, 
                                 this.props.stats.threeHoverAmountAvg],
                             backgroundColor:[
                                 'rgba(68,190,199, 0.6)',
                                 'rgba(214,150,187, 0.6)',
-                                'rgba(255,195,0, 0.6)',
+                                'rgba(255,195,64, 0.6)',
                             ],
                         }]
                     }}
@@ -96,7 +96,7 @@ export default class CompCharts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'amount of hovers',
+                                text:'amount of hovers (positions)',
                             } ,
                             legend:{
                                 display:true,
@@ -106,18 +106,18 @@ export default class CompCharts extends Component{
                     }
                 />
 
-                <Pie
+                <Bar
                     data={{
                         labels: ['one', 'two', 'three'],
                         datasets: [{
-                            label: 'time hovered',
+                            label: 'time hovered (positions)',
                             data:[this.props.stats.oneHoverTimeAvg, 
                                 this.props.stats.twoHoverTimeAvg, 
                                 this.props.stats.threeHoverTimeAvg],
                             backgroundColor:[
                                 'rgba(68,190,199, 0.6)',
                                 'rgba(214,150,187, 0.6)',
-                                'rgba(255,195,0, 0.6)',
+                                'rgba(255,195,64, 0.6)',
                             ],
                         }]
                     }}
@@ -127,10 +127,10 @@ export default class CompCharts extends Component{
                         { 
                             title:{
                                 display:true,
-                                text:'time hovered',
+                                text:'time hovered (positions)',
                             } ,
                             legend:{
-                                display:true,
+                                display:false,
                                 position:'left',
                             }
                         }
