@@ -39,7 +39,7 @@ export default class Stats extends Component {
                 <h3>Session Stats</h3> 
                 <div>
                   <p>
-                  {this.props.stats.time/1000} seconds to picked the {this.props.stats.pressed.color} color in position:{this.props.stats.pressed.position} 
+                  {this.props.stats.time/1000} second(s) to choose {this.props.stats.pressed.color}in position:{this.props.stats.pressed.position} 
                   </p>                  
                   <p>{(this.props.mobile) ? "Mobile browser used" : "Desktop browser used"}</p>
                 </div>
