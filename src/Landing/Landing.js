@@ -13,7 +13,7 @@ export default function Landing(props) {
             <section className="slide">
                 <header role="banner">
                     <h1>Digital footprints</h1>
-                    <h2>See yours</h2>
+                    <h2 className="sub-banner">See yours</h2>
                 </header>
     
                 <div className='title'>
@@ -62,7 +62,7 @@ export default function Landing(props) {
 
                 <div>
                     <header>
-                        <h3>See what I have tracked click the button below!</h3>
+                        <h3>To see what I have tracked click the button below!</h3>
                     </header>
                     <button className="toStats">
                         <NavLink
